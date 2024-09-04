@@ -25,6 +25,7 @@ tasks.withType(JavaCompile) {
 
 dependencies {
   // 스프링
+
   implementation ("org.springframework:spring-context:${springVersion}")
           { exclude group: 'commons-logging', module: 'commons-logging' }
   implementation "org.springframework:spring-webmvc:${springVersion}"
@@ -62,8 +63,7 @@ dependencies {
   // 테스트
   testImplementation "org.springframework:spring-test:${springVersion}"
   testCompileOnly"org.projectlombok:lombok:${lombokVersion}"
-  testAnnotationProcessor "org.projectlombok:${lombokVersion}"
-
+  testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
   testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
   testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 
